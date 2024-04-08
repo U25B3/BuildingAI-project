@@ -1,7 +1,6 @@
 
 # TV Series Duration Prediction (Building AI course project)
 ## Summary
-
 This project aims to predict the duration of TV series based on various features such as votes, ratings, age limit,episode runtime and starting year. The duration is calculated as the difference between the end year and start year of the series. The prediction is made using machine learning techniques and neural networks.
 
 ## Dataset
