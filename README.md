@@ -18,6 +18,14 @@ Before training the models, the data undergoes preprocessing to handle missing v
 
 The neural network model architecture comprises several dense layers with the ReLU activation function, followed by an output layer for regression. The model is trained using TensorFlow's Keras API.
 
+### Weighting
+```python
+    weight_votes = 1
+    weight_rating = 0.9
+    weight_runtime = 0.7
+    weight_age_limit = 0.6
+    weight_start_year = 0.4
+```
 #### Model Architecture
 
 The neural network architecture is defined as follows:
@@ -37,11 +45,24 @@ model.fit(X_train, y_train, epochs=100, batch_size=64, verbose=0)
 ```
 ## Results
 
-Mean Squared Error: 13.969238234347074
+### Mean Squared Error (MSE)
+The Mean Squared Error (MSE) measures the average squared difference between predicted and actual values. Here, the MSE of 13.97 indicates that, on average, the model's predictions deviate by approximately 13.97 from the actual TV series durations. Lower MSE values signify better performance.
 
-Standard Diviation: 3.8131979046382094
+### Standard Deviation
+The Standard Deviation (SD) quantifies the variability of predicted durations around the mean. With a value of approximately 3.81, the model's predictions exhibit moderate variability. Lower SD implies more consistent predictions.
+
+These results suggest that while the model performs reasonably well, there's room for improvement in reducing prediction variability.
 
 ![Series_duration](https://github.com/U25B3/BuildingAI-project/assets/80511413/9b667201-d95c-42f8-b41e-6f1f6e51b8b5)
+
+### Results: Votes and rating only
+MSE: 20.32
+
+SD: 4.73
+
+![series_duration_only_rating_votes](https://github.com/U25B3/BuildingAI-project/assets/80511413/523e627e-51f1-4100-8676-b9cc39f1f780)
+
+
 
 ## License
 
