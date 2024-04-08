@@ -70,6 +70,11 @@ SD: 4.73
 
 ![series_duration_only_rating_votes](https://github.com/U25B3/BuildingAI-project/assets/80511413/523e627e-51f1-4100-8676-b9cc39f1f780)
 
+## Improvements
+The initial atempt shows a somewhat positive result, but a larger dataset is needed to improve this model. More series parameters are avalible online and the dataset should be improved to include these features.
+
+## Acknowledgments
+The series data used to generate this model is fetched from Imdb. 
 
 
 ## License
