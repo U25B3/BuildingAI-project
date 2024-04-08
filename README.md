@@ -74,7 +74,7 @@ SD: 4.73
 The initial atempt shows a somewhat positive result, but a larger dataset is needed to improve this model. More series parameters are avalible online and the dataset should be improved to include these features.
 
 ## Acknowledgments
-The series data used to generate this model is fetched from Imdb. 
+The series data used to generate this model is fetched from Imdb top 250 series. This dataset might not be representable for all series.
 
 
 ## License
