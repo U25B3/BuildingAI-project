@@ -7,12 +7,28 @@ from tensorflow.keras.models import Sequential
 from tensorflow.keras.layers import Dense
 from sklearn.preprocessing import StandardScaler
 
-def load_data(file_name):
+def load_data(file_name: str) -> list:
+    """Reads json file and returns as list
+
+    Args:
+        file_name (str): name of file with expention e.g. "series_data.json"
+
+    Returns:
+        list: list of entries in json
+    """
     with open(file_name, "r") as file:
         data = json.load(file)
     return data
 
-def pre_process_data(data):
+def pre_process_data(data: list) -> list:
+    """Removes invalid data and outliers. Normalizes and weights data.
+
+    Args:
+        data (list): input data
+
+    Returns:
+        list: [X, y, processed_data]
+    """
     X = []
     y = []
     i = 0
@@ -61,11 +77,11 @@ def pre_process_data(data):
 
     return [X, y, data]
 
-def train_test_split_data(X, y, titles):
+def train_test_split_data(X, y, titles) -> list:
     X_train, X_test, y_train, y_test, titles_train, titles_test = train_test_split(X, y, titles, test_size=0.3, random_state=17)
     return [X_train, X_test, y_train, y_test, titles_train, titles_test]
 
-def train_model(X_train, y_train, X_test, y_test):
+def train_model(X_train, y_train, X_test, y_test) -> list:
     model = Sequential([
         Dense(64, activation='relu', input_shape=(X_train.shape[1],)),
         Dense(32, activation='relu'),
@@ -81,7 +97,7 @@ def train_model(X_train, y_train, X_test, y_test):
     print("Mean Squared Error:", mse)
     return [y_test, y_pred, mse]
 
-def plot_data(y_test, y_pred, titles):
+def plot_data(y_test, y_pred, titles) -> None:
     for i in range(len(y_test)):
         plt.scatter(y_test[i], y_pred[i])
         plt.annotate(titles[i], (y_test[i], y_pred[i]))
@@ -92,12 +108,12 @@ def plot_data(y_test, y_pred, titles):
     plt.legend()
     plt.show()
 
-def get_std(y_test, y_pred):
+def get_std(y_test, y_pred) -> float:
     residuals = y_test - y_pred   
     std = np.std(residuals)
     return std
 
-def get_titles (data):
+def get_titles (data) -> list:
     titles = [entry["title"] for entry in data]
     return titles
 
