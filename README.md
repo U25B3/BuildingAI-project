@@ -37,6 +37,7 @@ model.fit(X_train, y_train, epochs=100, batch_size=64, verbose=0)
 ## Results
 
 Mean Squared Error: 13.969238234347074
+
 Standard Diviation: 3.8131979046382094
 
 ![Series_duration](https://github.com/U25B3/BuildingAI-project/assets/80511413/9b667201-d95c-42f8-b41e-6f1f6e51b8b5)
