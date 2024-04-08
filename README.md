@@ -6,7 +6,7 @@ This project aims to predict the duration of TV series based on various features
 
 ## Dataset
 
-The dataset used in this project consists of information about various TV series including their titles, start and end years, number of episodes, ratings, and other relevant features. The data is stored in a JSON format, with each entry representing a TV series. The episodes are selected randomly from IMDB top 250 series.
+The dataset used in this project consists of information about various TV series including their titles, start and end years, number of episodes, ratings, and other relevant features. The data is stored in a JSON format, with each entry representing a TV series. The series are selected randomly from IMDB top 250 series, and 26 are evaluated.
 
 ## Preprocessing
 
